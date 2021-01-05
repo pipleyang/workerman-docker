@@ -8,6 +8,7 @@
         }
     ],
     "require": {
-        "workerman/workerman": "^3.5"
+        "workerman/workerman": "^3.5",
+        "tencentcloudbase/tcb-php-sdk": "^1.0"
     }
 }
