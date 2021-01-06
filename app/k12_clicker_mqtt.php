@@ -45,7 +45,7 @@ $worker->onWorkerStart = function(){
 		//保存
 		$rst = $msg->save($content);
 		$logFl = sprintf("/var/log/myapp/clcMsgSveRest_%s.log", date("Y-m-d"));
-
+		
 		$lg = array('type'=>'msgSave', 'data'=>$rst);
 		
 		file_put_contents($logFl, json_encode($lg));
