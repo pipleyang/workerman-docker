@@ -3,22 +3,35 @@ require_once __DIR__ . '/vendor/autoload.php';
 use Workerman\Worker;
 $worker = new Worker();
 $worker->onWorkerStart = function(){
+	//
+	$client_id = "b827ebece3a78";
+	//
+	$username = "IgnMssu5";
+	//
+	$password = "n44eKX!O@HA5E7am";
+	//
+	$Topic = "test";
+	//
+	$Host = "mqtt://emqtt.santiy.com";
+	//
+	$Port = "1883";
+
 	$options = array(
 						'keepalive' => 90,
-						'client_id' => "b827ebece3a78",
-						'username' => "admin",
-						'password' => "BXGDsT5HDxhhq&yO",
+						'client_id' => $client_id,
+						'username' => $username,
+						'password' => $password,
 						'clean_session' => true,
 						'protocol_name' => "MQTT",
 						'protocol_level' => 4
 					);
-
-    $mqtt = new Workerman\Mqtt\Client('mqtt://emqtt.santiy.com:1883', $options);
+	//
+    $mqtt = new Workerman\Mqtt\Client(sprintf("%s:%s", $Host, $Port), $options);
     $mqtt->onConnect = function($mqtt) {
-        $mqtt->subscribe('test');
+        $mqtt->subscribe($Topic);
     };
     $mqtt->onMessage = function($topic, $content){
-        var_dump($topic, $content);
+        var_dump($Topic, $content);
     };
     $mqtt->connect();
 };
