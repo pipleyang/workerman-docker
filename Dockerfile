@@ -11,4 +11,4 @@ RUN  echo extension=event.so > /usr/local/etc/php/conf.d/30-event.ini
 #ENTRYPOINT [ "/entrypoint.sh" ]
 #CMD /entrypoint.sh
 EXPOSE 2345
-ENTRYPOINT [ "/bin/sh", "$STARTFILE" ]
+ENTRYPOINT [ "/bin/sh", "/entrypoint.sh" ]
