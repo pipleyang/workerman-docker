@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+//初始化workerman
 use Workerman\Worker;
+//
 $worker = new Worker();
 $worker->onWorkerStart = function(){
 	//
@@ -15,7 +17,7 @@ $worker->onWorkerStart = function(){
 	$Host = "mqtt://emqtt.santiy.com";
 	//
 	$Port = "1883";
-
+	//
 	$options = array(
 						'keepalive' => 90,
 						'client_id' => $client_id,
