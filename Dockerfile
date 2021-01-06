@@ -11,4 +11,5 @@ RUN  apt-get install libevent-dev libssl-dev nano -y && pecl install event
 RUN  echo extension=event.so > /usr/local/etc/php/conf.d/30-event.ini
 #
 EXPOSE 2345
-ENTRYPOINT /entrypoint.sh
+#ENTRYPOINT /entrypoint.sh
+CMD [ "/usr/local/bin/php", "/usr/src/myapp/k12_clicker_mqtt.php", "start", "-d" ]
