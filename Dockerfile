@@ -10,5 +10,5 @@ RUN  apt-get install libevent-dev libssl-dev nano -y && pecl install event
 RUN  echo extension=event.so > /usr/local/etc/php/conf.d/30-event.ini
 #ENTRYPOINT [ "/entrypoint.sh" ]
 #CMD /entrypoint.sh
-CMD [ "sh", "-c", "$STARTFILE" ]
 EXPOSE 2345
+ENTRYPOINT [ "/bin/sh", "$STARTFILE" ]
