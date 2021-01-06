@@ -4,6 +4,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/ClickerMsg.php';
 //初始化workerman
 use Workerman\Worker;
+//日志设定
+Worker::$logFile = '/var/log/myapp/workerman.log';
 //
 $worker = new Worker();
 $worker->onWorkerStart = function(){
@@ -13,8 +15,6 @@ $worker->onWorkerStart = function(){
 	$username = "IgnMssu5";
 	//
 	$password = "n44eKX!O@HA5E7am";
-	//
-	$Topic = "test";
 	//
 	$Host = "mqtt://emqtt.santiy.com";
 	//
@@ -32,6 +32,7 @@ $worker->onWorkerStart = function(){
 	//
 	$mqtt = new Workerman\Mqtt\Client(sprintf("%s:%s", $Host, $Port), $options);
 	$mqtt->onConnect = function($mqtt) {
+		$Topic = "test";
 	    $mqtt->subscribe($Topic);
 	};
 	$mqtt->onMessage = function($topic, $content){
@@ -43,7 +44,11 @@ $worker->onWorkerStart = function(){
 							);
 		//保存
 		$rst = $msg->save($content);
+		$logFl = sprintf("/var/log/myapp/clcMsgSveRest_%s.log", date("Y-m-d"));
 
+		$lg = array('type'=>'msgSave', 'data'=>$rst);
+		
+		file_put_contents($logFl, json_encode($lg));
 	};
 	$mqtt->connect();
 };
