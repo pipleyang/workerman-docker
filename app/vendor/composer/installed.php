@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '0e769e8123b19889e573ab2a76ed1265987376ef',
+    'reference' => 'b14bd473e790f0457654819b57aa90db8612eac3',
     'name' => 'dalong/app',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '0e769e8123b19889e573ab2a76ed1265987376ef',
+      'reference' => 'b14bd473e790f0457654819b57aa90db8612eac3',
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -107,6 +107,15 @@
       array (
       ),
       'reference' => '252b9eca7ec4b69257597fe0def8ffc753897a94',
+    ),
+    'workerman/mqtt' => 
+    array (
+      'pretty_version' => 'v1.1',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '248cdf4216a3373557ea8db9510d563d2988e820',
     ),
     'workerman/workerman' => 
     array (

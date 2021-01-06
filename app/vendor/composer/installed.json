@@ -677,6 +677,49 @@
             "install-path": "../tencentcloudbase/tcb-php-sdk"
         },
         {
+            "name": "workerman/mqtt",
+            "version": "v1.1",
+            "version_normalized": "1.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/walkor/mqtt.git",
+                "reference": "248cdf4216a3373557ea8db9510d563d2988e820"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/walkor/mqtt/zipball/248cdf4216a3373557ea8db9510d563d2988e820",
+                "reference": "248cdf4216a3373557ea8db9510d563d2988e820",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "workerman/workerman": ">=3.3.0"
+            },
+            "time": "2021-01-05T02:06:42+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Workerman\\Mqtt\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "homepage": "http://www.workerman.net",
+            "support": {
+                "issues": "https://github.com/walkor/mqtt/issues",
+                "source": "https://github.com/walkor/mqtt/tree/v1.1"
+            },
+            "install-path": "../workerman/mqtt"
+        },
+        {
             "name": "workerman/workerman",
             "version": "v3.5.22",
             "version_normalized": "3.5.22.0",

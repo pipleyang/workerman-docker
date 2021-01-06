@@ -9,6 +9,7 @@
     ],
     "require": {
         "workerman/workerman": "^3.5",
-        "tencentcloudbase/tcb-php-sdk": "^1.0"
+        "tencentcloudbase/tcb-php-sdk": "^1.0",
+        "workerman/mqtt": "^1.1"
     }
 }

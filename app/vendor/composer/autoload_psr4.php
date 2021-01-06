@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Workerman\\Mqtt\\' => array($vendorDir . '/workerman/mqtt/src'),
     'Workerman\\' => array($vendorDir . '/workerman/workerman'),
     'TencentCloudBase\\' => array($vendorDir . '/tencentcloudbase/tcb-php-sdk/src'),
     'Symfony\\Polyfill\\Php72\\' => array($vendorDir . '/symfony/polyfill-php72'),
